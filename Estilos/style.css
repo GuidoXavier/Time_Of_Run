@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.tela{
+    width: 100%;
+    height: 500px;
+    border-bottom: 15px solid rgb(35, 160, 35);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #E0F6FF);
+}
+
+.donuts {
+    position: absolute;
+    bottom: -14px;
+    width: 120px;
+   animation: donuts_animation 5000ms infinite linear;
+}
+
+.finn {
+    position: absolute;
+    transform: scaleX(-1);
+    bottom: -20px;
+    width: 100px;
+
+}
+
+.jump {
+    animation: finn_jump 1s ease-out;
+}
+
+.txtGameOver {
+   position: absolute;
+   color: black;
+   top : 40%;
+   left : 50%;
+   transform: translate(-50%, -50%);
+   z-index: 5;
+}
+
+.btnGameOver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    border: 3px solid black; /* Define a borda do botão */
+    background-color: white; /* Cor de fundo para o botão */
+    z-index: 5; /* Aumenta o z-index para garantir que fique acima de tudo */
+    padding: 10px 20px; /* Adiciona algum preenchimento ao botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    font-size: 16px; /* Tamanho da fonte do texto no botão */
+}
+
+.info {
+    bottom: 76%;
+    left: 1%;
+    position: absolute;
+    border: 2px solid black;   
+    width: 30%;
+    background-color: white;
+}
+
+@keyframes finn_jump {
+    0% {
+        bottom: -20px;
+    }
+    45%{
+        bottom: 160px
+    }
+    50%{
+        bottom: 160px
+    }
+    55% {
+        bottom: 160px
+    }
+    100%{
+        bottom: 0px;
+    }
+}
+
+@keyframes donuts_animation {
+    from {
+        right: -106px;
+        transform: rotate(0deg);
+    }
+
+    to {
+        right: 100%;
+        transform: rotate(-360deg);
+    }
+}

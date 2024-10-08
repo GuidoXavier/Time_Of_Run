@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-image: url(../files/background.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 0;
+    }
+}
+
+.Menu{
+    width: 100%;
+    height: 100vh;
+    border: 2px solid black;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-image: url(../files/background2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+
+
+.clouds1{
+    position: absolute;
+    width: 15%;
+    bottom: 50%;
+    animation: moverNuvens 30s infinite linear;
+    z-index: 1;
+}
+.clouds2{
+    position: absolute;
+    width: 10%;
+    bottom: 65%;
+    animation: moverNuvens 40s infinite linear;
+    z-index: 1;
+}
+.clouds3{
+    position: absolute;
+    width: 20%;
+    bottom: 35%;
+    animation: moverNuvens 20s infinite linear;
+    z-index: 1;
+}
+
+.button-list{
+    list-style-type: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.button-list li{
+    margin: 10px 0;
+}
+
+.iniciar {
+    display: block;
+    width: 200px;
+    border: 5px solid black; /* Define a borda do botão */
+    background-color: white; /* Cor de fundo para o botão */
+    z-index: 5; /* Aumenta o z-index para garantir que fique acima de tudo */
+    padding: 10px 20px; /* Adiciona algum preenchimento ao botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    font-size: 16px; /* Tamanho da fonte do texto no botão */
+}
+
+
+@keyframes moverNuvens {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -20%; 
+    }
+}
