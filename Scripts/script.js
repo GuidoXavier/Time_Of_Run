@@ -13,20 +13,17 @@ const jump = () => {
     finn.classList.add('jump')
 
     setTimeout(() => {
-       finn.classList.remove('jump')
-       pulou = false;
+        finn.classList.remove('jump')
+        pulou = false;
 
     }, 1000)
 }
 
-const loop = setInterval(() => {
-    
-
-
+const loop = () => {
     const donutsPosition = donuts.offsetLeft;
     const finnPosition = +window.getComputedStyle(finn).bottom.replace('px', '');
 
-    if(donutsPosition <= 54 && donutsPosition>0 && finnPosition < 70 ) {
+    if (donutsPosition <= 54 && donutsPosition > 0 && finnPosition < 70) {
         donuts.style.animation = 'none';
         donuts.style.left = `${donutsPosition}px`;
         finn.style.animation = 'none';
@@ -44,13 +41,14 @@ const loop = setInterval(() => {
         });
         tela.appendChild(btnGameOver);
         tela.appendChild(txtGameOver);
+        return;
     }
-    
-    if(donutsPosition <= 54 && donutsPosition>30 && finnPosition > 70 && !pulou){
+
+    if (donutsPosition <= 54 && donutsPosition > 30 && finnPosition > 70 && !pulou) {
         pontuacao += 1;
-        console.log
         score.textContent = pontuacao;
-        if(pontuacao > record){
+
+        if (pontuacao > record) {
             record = pontuacao;
             Recorde.textContent = record;
             localStorage.setItem('record', record);
@@ -58,20 +56,18 @@ const loop = setInterval(() => {
         pulou = true;
     }
 
-}, 10);
+    requestAnimationFrame(loop);
+
+};
 
 function inicializarRecord() {
- Recorde.textContent = record; 
+    Recorde.textContent = record;
 }
 
-const ajustarVelocidade = () => {
-    if(velocidade > 300) {
-        velocidade -= 1000;
-        console.log(velocidade);
-        donuts.style.animationDuration = `${velocidade}ms`
-    }
-}
+
 
 document.addEventListener('keydown', jump);
 inicializarRecord();
-donuts.addEventListener('animationiteration', ajustarVelocidade);
+requestAnimationFrame(loop);
+
+
