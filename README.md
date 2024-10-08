@@ -19,12 +19,12 @@ A ideia é que, com o tempo, eu vá **melhorando o código** e **adicionando nov
 ## Como Executar o Projeto
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/GuidoXavier/Time_Of_Run.git
 
 2. Navegue até a pasta do projeto:
    
 3. ```bash
-   cd nome-do-projeto
+   cd Time_Of_Run
 
 4. Abra o arquivo index.html no seu navegador para jogar.
 
